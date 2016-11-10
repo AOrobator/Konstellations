@@ -5,4 +5,55 @@
 	<string name="shortcut_long_label">Shortcut Long Label</string>
 	<!-- Short label should be <= 10 characters-->
 	<string name="shortcut_short_label">Shortcut</string>
+
+	<string name="constellation_aquarius">Aquarius</string>
+	<string name="constellation_aquila">Aquila, the Eagle</string>
+	<string name="constellation_aries">Aries, the Ram</string>
+	<string name="constellation_auriga">Auriga, the Charioteer</string>
+	<string name="constellation_bootes">Boötes, the Herdsman</string>
+	<string name="constellation_cancer">Cancer, the Crab</string>
+	<string name="constellation_canis_major">Canis Major, the Great Dog</string>
+	<string name="constellation_capricornus">Capricornus, the Sea-Goat</string>
+	<string name="constellation_cassiopeia">Cassiopeia, the Queen</string>
+	<string name="constellation_cygnus">Cygnus, the Swan</string>
+	<string name="constellation_gemini">Gemini, the Twins</string>
+	<string name="constellation_leo">Leo, the Lion</string>
+	<string name="constellation_libra">Libra, the Scales</string>
+	<string name="constellation_lyra">Lyra, the Harp</string>
+	<string name="constellation_orion">Orion, the Hunter</string>
+	<string name="constellation_pegasus">Pegasus, the Flying Horse</string>
+	<string name="constellation_perseus">Perseus, the Hero</string>
+	<string name="constellation_pisces">Pisces, the Fish</string>
+	<string name="constellation_sagittarius">Sagittarius, the Archer</string>
+	<string name="constellation_scorpius">Scorpius, the Scorpion</string>
+	<string name="constellation_taurus">Taurus, the Bull</string>
+	<string name="constellation_ursa_major">Ursa Major, the Great Bear</string>
+	<string name="constellation_virgo">Virgo</string>
+
+	<string-array name="constellations">
+		<item>@string/constellation_aquarius</item>
+		<item>@string/constellation_aquila</item>
+		<item>@string/constellation_aries</item>
+		<item>@string/constellation_auriga</item>
+		<item>@string/constellation_bootes</item>
+		<item>@string/constellation_cancer</item>
+		<item>@string/constellation_canis_major</item>
+		<item>@string/constellation_capricornus</item>
+		<item>@string/constellation_cassiopeia</item>
+		<item>@string/constellation_cygnus</item>
+		<item>@string/constellation_gemini</item>
+		<item>@string/constellation_leo</item>
+		<item>@string/constellation_libra</item>
+		<item>@string/constellation_lyra</item>
+		<item>@string/constellation_orion</item>
+		<item>@string/constellation_pegasus</item>
+		<item>@string/constellation_perseus</item>
+		<item>@string/constellation_pisces</item>
+		<item>@string/constellation_sagittarius</item>
+		<item>@string/constellation_scorpius</item>
+		<item>@string/constellation_taurus</item>
+		<item>@string/constellation_ursa_major</item>
+		<item>@string/constellation_virgo</item>
+	</string-array>
+
 </resources>

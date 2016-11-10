@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     val constellationsRecyclerView = findViewById(R.id.constellations_recyclerview) as RecyclerView
-    constellationsRecyclerView.adapter = ConstellationsAdapter()
+    val constellations = resources.getStringArray(R.array.constellations)
+    constellationsRecyclerView.adapter = ConstellationsAdapter(constellations)
   }
 
   @TargetApi(Build.VERSION_CODES.N_MR1)
