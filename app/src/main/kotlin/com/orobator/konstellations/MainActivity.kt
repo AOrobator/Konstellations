@@ -11,23 +11,27 @@ import android.os.Build.VERSION_CODES.N_MR1
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
+import butterknife.BindArray
+import butterknife.BindView
+import butterknife.ButterKnife
 import com.orobator.konstellations.R.mipmap
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
+  @BindView(R.id.constellations_recyclerview) lateinit var constellationsRecyclerView: RecyclerView
+  @BindArray(R.array.constellations) lateinit var constellations: Array<String>
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+    ButterKnife.bind(this)
 
     if (SDK_INT >= N_MR1) {
       addDynamicShortcuts()
     }
 
-    val constellationsRecyclerView = findViewById(R.id.constellations_recyclerview) as RecyclerView
-    val constellations = resources.getStringArray(R.array.constellations)
     constellationsRecyclerView.adapter = ConstellationsAdapter(constellations)
   }
 

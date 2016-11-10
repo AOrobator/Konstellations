@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import butterknife.BindView
+import butterknife.ButterKnife
 import com.orobator.konstellations.ConstellationsAdapter.ConstellationViewHolder
 
 class ConstellationsAdapter(val constellations: Array<String>)
@@ -17,16 +19,20 @@ class ConstellationsAdapter(val constellations: Array<String>)
   }
 
   override fun onBindViewHolder(holder: ConstellationViewHolder?, position: Int) {
-    holder?.bind(position)
+    holder!!.bind(constellations[position])
   }
 
   override fun getItemCount(): Int = constellations.size
 
-  inner class ConstellationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val constellationTextView = itemView.findViewById(R.id.constellation_name) as TextView
+  class ConstellationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    @BindView(R.id.constellation_name) lateinit var constellationTextView: TextView
 
-    fun bind(position: Int) {
-      constellationTextView.text = constellations[position]
+    init {
+      ButterKnife.bind(this, itemView)
+    }
+
+    fun bind(constellation: String) {
+      constellationTextView.text = constellation
     }
   }
 
