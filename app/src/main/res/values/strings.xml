@@ -1,6 +1,8 @@
 <resources>
 	<string name="app_name">Konstellations</string>
 	<string name="shortcut_disabled_message">Shortcut Disabled</string>
+	<!-- Long label should be <= 25 characters-->
 	<string name="shortcut_long_label">Shortcut Long Label</string>
-	<string name="shortcut_short_label">Shortcut Short Label</string>
+	<!-- Short label should be <= 10 characters-->
+	<string name="shortcut_short_label">Shortcut</string>
 </resources>
