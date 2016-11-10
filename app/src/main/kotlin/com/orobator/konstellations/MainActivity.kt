@@ -6,7 +6,8 @@ import android.content.Intent.ACTION_VIEW
 import android.content.pm.ShortcutInfo.Builder
 import android.content.pm.ShortcutManager
 import android.graphics.drawable.Icon
-import android.os.Build
+import android.os.Build.VERSION.SDK_INT
+import android.os.Build.VERSION_CODES.N_MR1
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
+    if (SDK_INT >= N_MR1) {
       addDynamicShortcuts()
     }
 
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     constellationsRecyclerView.adapter = ConstellationsAdapter(constellations)
   }
 
-  @TargetApi(Build.VERSION_CODES.N_MR1)
+  @TargetApi(N_MR1)
   private fun addDynamicShortcuts() {
     val currentDate = Date()
 
