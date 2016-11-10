@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+	<shortcut
+			android:enabled="true"
+			android:icon="@mipmap/ic_launcher"
+			android:shortcutDisabledMessage="@string/shortcut_disabled_message"
+			android:shortcutId="static_shortcut"
+			android:shortcutLongLabel="@string/shortcut_long_label"
+			android:shortcutShortLabel="@string/shortcut_short_label">
+		<intent
+				android:action="android.intent.action.VIEW"
+				android:targetClass="com.orobator.konstellations.MainActivity"
+				android:targetPackage="com.orobator.konstellations"/>
+		<!-- If your shortcut is associated with multiple intents, include them
+         here. The last intent in the list is what the user sees when they
+         launch this shortcut. -->
+		<!-- You can also specify the category of the shortcut via the <categories>
+		     tag. As of this writing, the only supported category is
+		     android.shortcut.conversation, and can be specified using android:name
+		     like so: -->
+		<!-- <categories android:name="android.shortcut.conversation"/> -->
+
+	</shortcut>
+
+</shortcuts>
