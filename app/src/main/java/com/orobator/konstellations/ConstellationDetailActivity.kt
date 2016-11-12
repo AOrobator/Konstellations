@@ -21,6 +21,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
     fun getIntent(context: Context, constellation: Constellation): Intent {
       val intent = Intent(context, ConstellationDetailActivity::class.java)
       intent.putExtra(KEY_CONSTELLATION, constellation)
+      intent.action = Intent.ACTION_VIEW
       return intent
     }
   }
