@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     ButterKnife.bind(this)
 
     if (hasAppShortcuts()) {
-//      addDynamicShortcuts()
+      addDynamicShortcuts()
     }
 
     constellationsRecyclerView.adapter = ConstellationsAdapter()

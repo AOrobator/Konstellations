@@ -20,7 +20,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
 
     fun getIntent(context: Context, constellation: Constellation): Intent {
       val intent = Intent(context, ConstellationDetailActivity::class.java)
-      intent.putExtra(KEY_CONSTELLATION, constellation)
+      intent.putExtra(KEY_CONSTELLATION, constellation.name)
       intent.action = Intent.ACTION_VIEW
       return intent
     }
@@ -31,8 +31,8 @@ class ConstellationDetailActivity : AppCompatActivity() {
     setContentView(R.layout.activity_constellation_detail)
     ButterKnife.bind(this)
 
-    val constellation: Constellation = intent.getSerializableExtra(
-        KEY_CONSTELLATION) as Constellation
+    val constellation: Constellation = Constellation.fromString(
+        intent.getStringExtra(KEY_CONSTELLATION))
 
     if (hasAppShortcuts()) {
       trackShortcutUsed(constellation)

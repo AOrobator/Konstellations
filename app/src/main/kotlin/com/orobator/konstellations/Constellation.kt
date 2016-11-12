@@ -1,6 +1,8 @@
 package com.orobator.konstellations
 
-enum class Constellation(val constellationName: String, desc: String) {
+import java.io.Serializable
+
+enum class Constellation(val constellationName: String, desc: String) : Serializable {
   AQUARIUS(R.string.aquarius.getString(), R.string.aquarius_desc.getString()),
   AQUILA(R.string.aquila.getString(), R.string.aquila_desc.getString()),
   ARIES(R.string.aries.getString(), R.string.aries_desc.getString()),
@@ -26,4 +28,10 @@ enum class Constellation(val constellationName: String, desc: String) {
   VIRGO(R.string.virgo.getString(), R.string.virgo_desc.getString());
 
   val description = desc + R.string.content_attribution.getString()
+
+  companion object {
+    fun fromString(name: String) : Constellation {
+      return Constellation.values().filter { it.name == name }.first()
+    }
+  }
 }
