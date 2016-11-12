@@ -1,12 +1,16 @@
 package com.orobator.konstellations
 
+import android.annotation.TargetApi
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ShortcutManager
+import android.os.Build.VERSION_CODES.N_MR1
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.orobator.konstellations.AndroidExtensions.Companion.hasAppShortcuts
 
 class ConstellationDetailActivity : AppCompatActivity() {
   @BindView(R.id.constellation_description) lateinit var description: TextView
@@ -29,8 +33,18 @@ class ConstellationDetailActivity : AppCompatActivity() {
     val constellation: Constellation = intent.getSerializableExtra(
         KEY_CONSTELLATION) as Constellation
 
+    if (hasAppShortcuts()) {
+      trackShortcutUsed(constellation)
+    }
+
     title = constellation.constellationName
     description.text = constellation.description
 
+  }
+
+  @TargetApi(N_MR1)
+  private fun trackShortcutUsed(constellation: Constellation) {
+    val shortcutManager = getSystemService(ShortcutManager::class.java)
+    shortcutManager.reportShortcutUsed(constellation.name)
   }
 }
