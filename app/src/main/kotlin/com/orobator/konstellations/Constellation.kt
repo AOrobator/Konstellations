@@ -1,12 +1,12 @@
 package com.orobator.konstellations
 
-enum class Constellation(val constellationName: String, val desc: String) {
+enum class Constellation(val constellationName: String, desc: String) {
   AQUARIUS(R.string.aquarius.getString(), R.string.aquarius_desc.getString()),
-  AQUILA(R.string.aquila.getString(), R.string.aquarius_desc.getString()),
-  AURIGA(R.string.auriga.getString(), R.string.aquarius_desc.getString()),
+  AQUILA(R.string.aquila.getString(), R.string.aquila_desc.getString()),
+  AURIGA(R.string.auriga.getString(), R.string.auriga_desc.getString()),
   BOOTES(R.string.bootes.getString(), R.string.bootes_desc.getString()),
   CANCER(R.string.cancer.getString(), R.string.cancer_desc.getString()),
-  CANIS_MAJOR(R.string.canis_major.getString(), R.string.cancer_desc.getString()),
+  CANIS_MAJOR(R.string.canis_major.getString(), R.string.canis_major_desc.getString()),
   CAPRICORNUS(R.string.capricornus.getString(), R.string.capricornus_desc.getString()),
   CASSIOPEIA(R.string.cassiopeia.getString(), R.string.cassiopeia_desc.getString()),
   CYGNUS(R.string.cygnus.getString(), R.string.cygnus_desc.getString()),
