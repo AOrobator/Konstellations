@@ -20,7 +20,9 @@
 					android:name="android.app.shortcuts"
 					android:resource="@xml/shortcuts"/>
 		</activity>
-		<activity android:name=".ConstellationDetailActivity">
+		<activity
+				android:name=".ConstellationDetailActivity"
+				android:parentActivityName=".MainActivity">
 		</activity>
 	</application>
 
