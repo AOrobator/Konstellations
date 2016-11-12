@@ -1,6 +1,6 @@
 package com.orobator.konstellations
 
-enum class Constellation(val constellationName: String, val description: String) {
+enum class Constellation(val constellationName: String, val desc: String) {
   AQUARIUS(R.string.aquarius.getString(), R.string.aquarius_desc.getString()),
   AQUILA(R.string.aquila.getString(), R.string.aquarius_desc.getString()),
   AURIGA(R.string.auriga.getString(), R.string.aquarius_desc.getString()),
@@ -21,5 +21,7 @@ enum class Constellation(val constellationName: String, val description: String)
   SCORPIUS(R.string.scorpius.getString(), R.string.scorpius_desc.getString()),
   TAURUS(R.string.taurus.getString(), R.string.taurus_desc.getString()),
   URSA_MAJOR(R.string.ursa_major.getString(), R.string.ursa_major_dsec.getString()),
-  VIRGO(R.string.virgo.getString(), R.string.virgo_desc.getString())
+  VIRGO(R.string.virgo.getString(), R.string.virgo_desc.getString());
+
+  val description = desc + R.string.content_attribution.getString()
 }
