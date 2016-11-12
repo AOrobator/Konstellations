@@ -9,7 +9,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.orobator.konstellations.ConstellationsAdapter.ConstellationViewHolder
 
-class ConstellationsAdapter(val constellations: Array<String>)
+class ConstellationsAdapter()
   : RecyclerView.Adapter<ConstellationViewHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ConstellationViewHolder {
@@ -19,10 +19,10 @@ class ConstellationsAdapter(val constellations: Array<String>)
   }
 
   override fun onBindViewHolder(holder: ConstellationViewHolder?, position: Int) {
-    holder!!.bind(constellations[position])
+    holder!!.bind(Constellation.values()[position])
   }
 
-  override fun getItemCount(): Int = constellations.size
+  override fun getItemCount(): Int = Constellation.values().size
 
   class ConstellationViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     @BindView(R.id.constellation_name) lateinit var constellationTextView: TextView
@@ -31,8 +31,13 @@ class ConstellationsAdapter(val constellations: Array<String>)
       ButterKnife.bind(this, itemView)
     }
 
-    fun bind(constellation: String) {
-      constellationTextView.text = constellation
+    fun bind(constellation: Constellation) {
+      constellationTextView.text = constellation.constellationName
+
+      itemView.setOnClickListener {
+        val intent = ConstellationDetailActivity.getIntent(it.context, constellation)
+        it.context.startActivity(intent)
+      }
     }
   }
 
