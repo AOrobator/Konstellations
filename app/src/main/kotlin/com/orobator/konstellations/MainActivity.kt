@@ -14,7 +14,6 @@ import android.support.v7.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.orobator.konstellations.AndroidExtensions.Companion.hasAppShortcuts
-import com.orobator.konstellations.R.mipmap
 import kotlin.comparisons.compareBy
 
 class MainActivity : AppCompatActivity() {
@@ -42,7 +41,7 @@ class MainActivity : AppCompatActivity() {
       Builder(this, it.name)
           .setShortLabel(it.shortName)
           .setLongLabel(it.longName)
-          .setIcon(Icon.createWithResource(this, mipmap.ic_launcher))
+          .setIcon(Icon.createWithResource(this, R.drawable.shortcut_icon))
           .setIntents(arrayOf(getIntent(this), ConstellationDetailActivity.getIntent(this, it)))
           .build()
     }
