@@ -1,5 +1,6 @@
 package com.orobator.konstellations
 
+import android.R.id.home
 import android.annotation.TargetApi
 import android.content.Context
 import android.content.Intent
@@ -63,11 +64,11 @@ class ConstellationDetailActivity : AppCompatActivity() {
         it.enableShortcuts(listOf(constellation.name))
         alertUser(shortcut_enabled)
       }
-
       disable_shortcut -> shortcutAction {
         it.disableShortcuts(listOf(constellation.name))
         alertUser(shortcut_disabled)
       }
+      home -> onBackPressed()
     }
     return true
   }
