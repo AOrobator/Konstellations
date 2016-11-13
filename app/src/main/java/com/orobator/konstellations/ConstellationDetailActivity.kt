@@ -28,8 +28,12 @@ class ConstellationDetailActivity : AppCompatActivity() {
     setContentView(R.layout.activity_constellation_detail)
     ButterKnife.bind(this)
 
-    val constellation: Constellation = Constellation.fromString(
-        intent.getStringExtra(KEY_CONSTELLATION))
+    val constellation: Constellation = if (intent.action == "RANDOM") {
+      Constellation.random()
+    } else {
+      val constellationName = intent.getStringExtra(KEY_CONSTELLATION)
+      Constellation.fromString(constellationName)
+    }
 
     if (hasAppShortcuts()) {
       ShortcutTracker.trackShortcut(this, constellation)

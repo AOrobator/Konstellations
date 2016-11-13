@@ -67,6 +67,7 @@ import com.orobator.konstellations.R.string.ursa_major_desc
 import com.orobator.konstellations.R.string.ursa_major_short_name
 import com.orobator.konstellations.R.string.virgo
 import com.orobator.konstellations.R.string.virgo_desc
+import java.util.Random
 
 
 enum class Constellation(val longName: String, desc: String, val shortName: String) {
@@ -100,5 +101,8 @@ enum class Constellation(val longName: String, desc: String, val shortName: Stri
     fun fromString(name: String) : Constellation {
       return Constellation.values().filter { it.name == name }.first()
     }
+
+    fun random() : Constellation = values()[Random().nextInt(values().size)]
+
   }
 }
