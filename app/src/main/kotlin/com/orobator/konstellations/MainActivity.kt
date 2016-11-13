@@ -13,6 +13,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.orobator.konstellations.AndroidExtensions.Companion.hasAppShortcuts
 import com.orobator.konstellations.R.mipmap
+import kotlin.comparisons.compareBy
 
 class MainActivity : AppCompatActivity() {
   @BindView(R.id.constellations_recyclerview) lateinit var constellationsRecyclerView: RecyclerView
@@ -33,8 +34,9 @@ class MainActivity : AppCompatActivity() {
   private fun addDynamicShortcuts() {
     val shortcutList: MutableList<ShortcutInfo> = mutableListOf()
 
-    Constellation.values()
-        .map {
+    Constellation.values().sortedWith(
+        compareBy { -ShortcutTracker.getShortcutVisitedCount(this, it) }
+    ).map {
           Builder(this, it.name)
               .setShortLabel(it.constellationName)
               .setLongLabel(it.constellationName)

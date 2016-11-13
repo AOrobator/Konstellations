@@ -1,10 +1,7 @@
 package com.orobator.konstellations
 
-import android.annotation.TargetApi
 import android.content.Context
 import android.content.Intent
-import android.content.pm.ShortcutManager
-import android.os.Build.VERSION_CODES.N_MR1
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
@@ -35,7 +32,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
         intent.getStringExtra(KEY_CONSTELLATION))
 
     if (hasAppShortcuts()) {
-      trackShortcutUsed(constellation)
+      ShortcutTracker.trackShortcut(this, constellation)
     }
 
     title = constellation.constellationName
@@ -43,9 +40,4 @@ class ConstellationDetailActivity : AppCompatActivity() {
 
   }
 
-  @TargetApi(N_MR1)
-  private fun trackShortcutUsed(constellation: Constellation) {
-    val shortcutManager = getSystemService(ShortcutManager::class.java)
-    shortcutManager.reportShortcutUsed(constellation.name)
-  }
 }

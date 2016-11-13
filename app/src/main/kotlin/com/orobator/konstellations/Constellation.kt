@@ -1,8 +1,7 @@
 package com.orobator.konstellations
 
-import java.io.Serializable
 
-enum class Constellation(val constellationName: String, desc: String) : Serializable {
+enum class Constellation(val constellationName: String, desc: String) {
   AQUARIUS(R.string.aquarius.getString(), R.string.aquarius_desc.getString()),
   AQUILA(R.string.aquila.getString(), R.string.aquila_desc.getString()),
   ARIES(R.string.aries.getString(), R.string.aries_desc.getString()),
