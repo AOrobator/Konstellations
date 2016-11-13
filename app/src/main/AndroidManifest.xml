@@ -22,7 +22,8 @@
 		</activity>
 		<activity
 				android:name=".ConstellationDetailActivity"
-				android:parentActivityName=".MainActivity">
+				android:parentActivityName=".MainActivity"
+				android:theme="@style/DetailTheme">
 		</activity>
 	</application>
 
