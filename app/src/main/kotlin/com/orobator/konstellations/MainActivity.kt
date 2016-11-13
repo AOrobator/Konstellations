@@ -37,13 +37,13 @@ class MainActivity : AppCompatActivity() {
     Constellation.values().sortedWith(
         compareBy { -ShortcutTracker.getShortcutVisitedCount(this, it) }
     ).map {
-          Builder(this, it.name)
-              .setShortLabel(it.shortName)
-              .setLongLabel(it.longName)
-              .setIcon(Icon.createWithResource(this, mipmap.ic_launcher))
-              .setIntent(ConstellationDetailActivity.getIntent(this, it))
-              .build()
-        }
+      Builder(this, it.name)
+          .setShortLabel(it.shortName)
+          .setLongLabel(it.longName)
+          .setIcon(Icon.createWithResource(this, mipmap.ic_launcher))
+          .setIntent(ConstellationDetailActivity.getIntent(this, it))
+          .build()
+    }
         .forEach { shortcutList += it }
 
     val shortcutManager = getSystemService(ShortcutManager::class.java)
