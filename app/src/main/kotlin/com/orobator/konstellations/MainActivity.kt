@@ -38,8 +38,8 @@ class MainActivity : AppCompatActivity() {
         compareBy { -ShortcutTracker.getShortcutVisitedCount(this, it) }
     ).map {
           Builder(this, it.name)
-              .setShortLabel(it.constellationName)
-              .setLongLabel(it.constellationName)
+              .setShortLabel(it.shortName)
+              .setLongLabel(it.longName)
               .setIcon(Icon.createWithResource(this, mipmap.ic_launcher))
               .setIntent(ConstellationDetailActivity.getIntent(this, it))
               .build()

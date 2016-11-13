@@ -32,7 +32,7 @@ class ConstellationsAdapter()
     }
 
     fun bind(constellation: Constellation) {
-      constellationTextView.text = constellation.constellationName
+      constellationTextView.text = constellation.longName
 
       itemView.setOnClickListener {
         val intent = ConstellationDetailActivity.getIntent(it.context, constellation)

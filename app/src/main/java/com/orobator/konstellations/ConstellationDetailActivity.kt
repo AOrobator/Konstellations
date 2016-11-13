@@ -35,7 +35,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
       ShortcutTracker.trackShortcut(this, constellation)
     }
 
-    title = constellation.constellationName
+    title = constellation.longName
     description.text = constellation.description
 
   }

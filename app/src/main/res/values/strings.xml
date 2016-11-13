@@ -30,31 +30,27 @@
 	<string name="ursa_major">Ursa Major, the Great Bear</string>
 	<string name="virgo">Virgo</string>
 
-	<string-array name="constellations">
-		<item>@string/aquarius</item>
-		<item>@string/aquila</item>
-		<item>@string/aries</item>
-		<item>@string/auriga</item>
-		<item>@string/bootes</item>
-		<item>@string/cancer</item>
-		<item>@string/canis_major</item>
-		<item>@string/capricornus</item>
-		<item>@string/cassiopeia</item>
-		<item>@string/cygnus</item>
-		<item>@string/gemini</item>
-		<item>@string/leo</item>
-		<item>@string/libra</item>
-		<item>@string/lyra</item>
-		<item>@string/orion</item>
-		<item>@string/pegasus</item>
-		<item>@string/perseus</item>
-		<item>@string/pisces</item>
-		<item>@string/sagittarius</item>
-		<item>@string/scorpius</item>
-		<item>@string/taurus</item>
-		<item>@string/ursa_major</item>
-		<item>@string/virgo</item>
-	</string-array>
+	<string name="aquila_short_name">Aquila</string>
+	<string name="aries_short_name">Aries</string>
+	<string name="auriga_short_name">Auriga</string>
+	<string name="bootes_short_name">Boötes</string>
+	<string name="cancer_short_name">Cancer</string>
+	<string name="canis_major_short_name">Canis Major</string>
+	<string name="capricornus_short_name">Capricornus</string>
+	<string name="cassiopeia_short_name">Cassiopeia</string>
+	<string name="cygnus_short_name">Cygnus</string>
+	<string name="gemini_short_name">Gemini</string>
+	<string name="leo_short_name">Leo</string>
+	<string name="libra_short_name">Libra</string>
+	<string name="lyra_short_name">Lyra</string>
+	<string name="orion_short_name">Orion</string>
+	<string name="pegasus_short_name">Pegasus</string>
+	<string name="perseus_short_name">Perseus</string>
+	<string name="pisces_short_name">Pisces</string>
+	<string name="sagittarius_short_name">Sagittarius</string>
+	<string name="scorpius_short_name">Scorpius</string>
+	<string name="taurus_short_name">Taurus</string>
+	<string name="ursa_major_short_name">Ursa Major</string>
 
 	<string name="aquarius_desc">Thanks to its position in the zodiac, not to mention a hit Broadway song, Aquarius, the water bearer, is one of the most famous constellations. But few people have actually seen it because it\'s so faint. It is home to the summer Delta Aquarid meteor shower, which like the constellation itself is fairly thin and sparse.\n\nSeveral of the stars of Aquarius have names that signify luck or good fortune. The most prominent examples are the constellation\'s two brightest stars, Sadalmelik and Sadalsuud. The names are from ancient Arabic, and mean "lucky one of the king" and "luckiest of the lucky." The names may refer to the stars\' positions. When the constellations were named, the Sun passed through this region of the sky in early spring, when the long nights of winter had passed and the new season brought life-giving rains. Aquarius is one of several \"watery\" constellations in that part of the sky.\n\nThe constellation is home to the globular cluster M2. It is 38,000 light-years from Earth, but is bright enough to see through binoculars because it consists of about 100,000 stars packed into a dense ball just a few light-years in diameter.\n\nThe cluster is one of the oldest objects in the galaxy, so all of its bright, heavy stars have long since expired. The brightest stars in M2 today are yellow and orange giants — stars that were once like the Sun, but that expanded and brightened as they consumed the nuclear fuel in their cores. M2 doesn\'t belong to the Milky Way galaxy’s flat disk. In fact, the disk didn’t even exist when M2 was born. Instead, M2 is part of the galaxy’s halo — a shell of stars that surrounds the disk.\n\nAnother of Aquarius\' wonders is an obscure star system known as Gliese 876. The star itself is a red dwarf, which is the smallest, faintest class of stars. Gliese 876 is only a third as massive as the Sun, and looks about a thousandth as bright. So even though it is just 15 light-years away, it is far too faint to see without a telescope.\n\nThe system contains at least four planets, including one that may be one of the most Earth-like worlds yet discovered. From a tiny \"wobble\" in the star\'s light caused by the planet\'s gravitational pull, along with other evidence, astronomers calculate that the planet probably is about twice as big as Earth and a few times more massive. Like Earth, it\'s probably a rocky world. And its gravity is strong enough to retain any atmosphere it was born with. The planet isn\'t a likely home for life, though, because it\'s so close to Gliese 876 that surface temperatures are hundreds of degrees. So if anything lives on the planet, it would have to be quite different from life on Earth.</string>
 	<string name="aquila_desc">Aquila glides on outstretched wings through the glowing band of the Milky Way. Look for it high in the south in late summer.\n\nThe brightest star in Aquila is Altair, \"the eagle,\" a white star that is about 17 light-years from Earth. Altair is the southern point of a pattern of three bright stars called the Summer Triangle. (Deneb, in the constellation Cygnus, forms the triangle\'s northeastern point. Vega, in Lyra, the harp, is in the northwest. Altair is nice and bright and easy to find right up to the beginning of winter.)\n\nAltair is about twice as massive as the Sun, so it will live only about two billion years versus the Sun\'s 10 billion. Despite its size, Altair appears to turn on its axis once every 10 hours, compared to about four weeks for the Sun. One of the effects of Altair\'s high-speed rotation is that its gas is forced outward at the equator, giving the star a flattened appearance — it is about 14 percent wider through the equator than through the poles. If Altair spun about twice as fast as it does now it would fly apart.\n\nAquila\'s two \"tail\" stars are Zeta and Epsilon Aquilae. Together, they also have an older Arabic name: Deneb al Okab, \"the eagle\'s tail.\" The northern star in the tail is actually a system of three or more stars. Only one of them is bright enough to see with the unaided eye. It\'s a type of star known as a red giant. That means it\'s in the final stages of life. Its core is getting hotter and denser, while its outer layers are puffing out and getting cooler. That\'s the same process that awaits the Sun in several billion years. The southern star is a multiple-star system, too. Its brightest star is fairly early in life. It\'s bigger, heavier, and hotter than the Sun, and it spins close to 200 times faster than the Sun, so like Aquila it bulges out at the equator, so it looks like a squashed beachball.\n\nThe Pioneer 11 spacecraft, which was launched in 1973, is heading toward one of the eagle\'s stars, Lambda Aquilae, which is 125 light-years away. Pioneer will pass the star in about four million years. Although the spacecraft has already expired, it carries a message from home: a small plaque with information about the craft and its makers — a greeting to the galaxy from the people who made Pioneer 11.</string>
