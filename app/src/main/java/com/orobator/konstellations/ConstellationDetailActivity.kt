@@ -1,16 +1,20 @@
 package com.orobator.konstellations
 
+import android.annotation.TargetApi
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
-import com.orobator.konstellations.AndroidExtensions.Companion.hasAppShortcuts
 
 class ConstellationDetailActivity : AppCompatActivity() {
   @BindView(R.id.constellation_description) lateinit var description: TextView
+  lateinit var constellation: Constellation
 
   companion object {
     val KEY_CONSTELLATION = "key_constellation"
@@ -28,20 +32,33 @@ class ConstellationDetailActivity : AppCompatActivity() {
     setContentView(R.layout.activity_constellation_detail)
     ButterKnife.bind(this)
 
-    val constellation: Constellation = if (intent.action == "RANDOM") {
+    constellation = if (intent.action == "RANDOM") {
       Constellation.random()
     } else {
       val constellationName = intent.getStringExtra(KEY_CONSTELLATION)
       Constellation.fromString(constellationName)
     }
 
-    if (hasAppShortcuts()) {
-      ShortcutTracker.trackShortcut(this, constellation)
+    shortcutAction {
+      ShortcutTracker.trackShortcut(it, constellation)
     }
 
     title = constellation.longName
     description.text = constellation.description
+  }
 
+  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    menuInflater.inflate(R.menu.detail_menu, menu)
+    return true
+  }
+
+  @TargetApi(Build.VERSION_CODES.N_MR1)
+  override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+    when (item!!.itemId) {
+      R.id.enable_shortcut -> shortcutAction { it.enableShortcuts(listOf(constellation.name)) }
+      R.id.disable_shortcut -> shortcutAction { it.disableShortcuts(listOf(constellation.name)) }
+    }
+    return true
   }
 
 }
