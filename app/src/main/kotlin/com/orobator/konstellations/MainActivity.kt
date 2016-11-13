@@ -1,6 +1,8 @@
 package com.orobator.konstellations
 
 import android.annotation.TargetApi
+import android.content.Context
+import android.content.Intent
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutInfo.Builder
 import android.content.pm.ShortcutManager
@@ -41,12 +43,18 @@ class MainActivity : AppCompatActivity() {
           .setShortLabel(it.shortName)
           .setLongLabel(it.longName)
           .setIcon(Icon.createWithResource(this, mipmap.ic_launcher))
-          .setIntent(ConstellationDetailActivity.getIntent(this, it))
+          .setIntents(arrayOf(getIntent(this), ConstellationDetailActivity.getIntent(this, it)))
           .build()
     }
         .forEach { shortcutList += it }
 
     val shortcutManager = getSystemService(ShortcutManager::class.java)
     shortcutManager.dynamicShortcuts = shortcutList.subList(0, 4)
+  }
+
+  fun getIntent(context: Context): Intent {
+    val intent = Intent(context, MainActivity::class.java)
+    intent.action = Intent.ACTION_VIEW
+    return intent
   }
 }
