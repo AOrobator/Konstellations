@@ -11,6 +11,10 @@ import android.view.MenuItem
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.orobator.konstellations.R.id.disable_shortcut
+import com.orobator.konstellations.R.id.enable_shortcut
+import com.orobator.konstellations.R.string.shortcut_disabled
+import com.orobator.konstellations.R.string.shortcut_enabled
 
 class ConstellationDetailActivity : AppCompatActivity() {
   @BindView(R.id.constellation_description) lateinit var description: TextView
@@ -53,10 +57,17 @@ class ConstellationDetailActivity : AppCompatActivity() {
   }
 
   @TargetApi(Build.VERSION_CODES.N_MR1)
-  override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-    when (item!!.itemId) {
-      R.id.enable_shortcut -> shortcutAction { it.enableShortcuts(listOf(constellation.name)) }
-      R.id.disable_shortcut -> shortcutAction { it.disableShortcuts(listOf(constellation.name)) }
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+      enable_shortcut -> shortcutAction {
+        it.enableShortcuts(listOf(constellation.name))
+        alertUser(shortcut_enabled)
+      }
+
+      disable_shortcut -> shortcutAction {
+        it.disableShortcuts(listOf(constellation.name))
+        alertUser(shortcut_disabled)
+      }
     }
     return true
   }

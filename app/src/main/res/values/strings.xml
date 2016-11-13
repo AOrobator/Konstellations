@@ -80,4 +80,6 @@
 
 	<string name="enable_shortcut">Enable Shortcut</string>
 	<string name="disable_shortcut">Disable Shortcut</string>
+	<string name="shortcut_enabled">Shortcut Enabled</string>
+	<string name="shortcut_disabled">Shortcut Disabled</string>
 </resources>
