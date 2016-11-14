@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
@@ -19,6 +20,7 @@ import com.orobator.konstellations.R.string.shortcut_enabled
 
 class ConstellationDetailActivity : AppCompatActivity() {
   @BindView(R.id.constellation_description) lateinit var description: TextView
+  @BindView(R.id.toolbar) lateinit var toolbar: Toolbar
   lateinit var constellation: Constellation
 
   companion object {
@@ -36,6 +38,9 @@ class ConstellationDetailActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_constellation_detail)
     ButterKnife.bind(this)
+
+    setSupportActionBar(toolbar)
+    supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
     constellation = if (intent.action == "RANDOM") {
       Constellation.random()
