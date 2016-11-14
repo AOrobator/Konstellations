@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
@@ -21,6 +22,7 @@ import com.orobator.konstellations.R.string.shortcut_enabled
 class ConstellationDetailActivity : AppCompatActivity() {
   @BindView(R.id.constellation_description) lateinit var description: TextView
   @BindView(R.id.toolbar) lateinit var toolbar: Toolbar
+  @BindView(R.id.constellation_image) lateinit var constellationImage: ImageView
 
   lateinit var constellation: Constellation
 
@@ -56,6 +58,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
 
     title = constellation.longName
     description.text = constellation.description
+    constellationImage.setImageResource(constellation.image)
   }
 
   override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -74,7 +77,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
         it.disableShortcuts(listOf(constellation.name))
         alertUser(shortcut_disabled)
       }
-      home -> onBackPressed()
+      home -> finish()
     }
     return true
   }

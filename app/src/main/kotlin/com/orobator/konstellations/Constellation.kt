@@ -1,5 +1,27 @@
 package com.orobator.konstellations
 
+import com.orobator.konstellations.R.drawable.aquarius_img
+import com.orobator.konstellations.R.drawable.aquila_img
+import com.orobator.konstellations.R.drawable.aries_img
+import com.orobator.konstellations.R.drawable.auriga_img
+import com.orobator.konstellations.R.drawable.bootes_img
+import com.orobator.konstellations.R.drawable.cancer_img
+import com.orobator.konstellations.R.drawable.canis_major_img
+import com.orobator.konstellations.R.drawable.capricornus_img
+import com.orobator.konstellations.R.drawable.cassiopeia_img
+import com.orobator.konstellations.R.drawable.cygnus_lyra_img
+import com.orobator.konstellations.R.drawable.gemini_img
+import com.orobator.konstellations.R.drawable.leo_img
+import com.orobator.konstellations.R.drawable.libra_img
+import com.orobator.konstellations.R.drawable.orion_img
+import com.orobator.konstellations.R.drawable.pegasus_img
+import com.orobator.konstellations.R.drawable.perseus_img
+import com.orobator.konstellations.R.drawable.pisces_img
+import com.orobator.konstellations.R.drawable.sagittarius_img
+import com.orobator.konstellations.R.drawable.scorpius_img
+import com.orobator.konstellations.R.drawable.taurus_img
+import com.orobator.konstellations.R.drawable.ursa_major_img
+import com.orobator.konstellations.R.drawable.virgo_img
 import com.orobator.konstellations.R.string.aquarius
 import com.orobator.konstellations.R.string.aquarius_desc
 import com.orobator.konstellations.R.string.aquila
@@ -70,32 +92,34 @@ import com.orobator.konstellations.R.string.virgo_desc
 import java.util.Random
 
 
-enum class Constellation(val longName: String, desc: String, val shortName: String) {
-  AQUARIUS(aquarius.getString(), aquarius_desc.getString(), aquarius.getString()),
-  AQUILA(aquila.getString(), aquila_desc.getString(), aquila_short_name.getString()),
-  ARIES(aries.getString(), aries_desc.getString(), aries_short_name.getString()),
-  AURIGA(auriga.getString(), auriga_desc.getString(), auriga_short_name.getString()),
-  BOOTES(bootes.getString(), bootes_desc.getString(), bootes_short_name.getString()),
-  CANCER(cancer.getString(), cancer_desc.getString(), cancer_short_name.getString()),
-  CANIS_MAJOR(canis_major.getString(), canis_major_desc.getString(), canis_major_short_name.getString()),
-  CAPRICORNUS(capricornus.getString(), capricornus_desc.getString(), capricornus_short_name.getString()),
-  CASSIOPEIA(cassiopeia.getString(), cassiopeia_desc.getString(), cassiopeia_short_name.getString()),
-  CYGNUS(cygnus.getString(), cygnus_desc.getString(), cygnus_short_name.getString()),
-  GEMINI(gemini.getString(), gemini_desc.getString(), gemini_short_name.getString()),
-  LEO(leo.getString(), leo_desc.getString(), leo_short_name.getString()),
-  LIBRA(libra.getString(), libra_desc.getString(), libra_short_name.getString()),
-  LYRA(lyra.getString(), lyra_desc.getString(), lyra_short_name.getString()),
-  ORION(orion.getString(), orion_desc.getString(), orion_short_name.getString()),
-  PEGASUS(pegasus.getString(), pegasus_desc.getString(), pegasus_short_name.getString()),
-  PERSEUS(perseus.getString(), perseus_desc.getString(), perseus_short_name.getString()),
-  PISCES(pisces.getString(), pisces_desc.getString(), pisces_short_name.getString()),
-  SAGITTARIUS(sagittarius.getString(), sagittarius_desc.getString(), sagittarius_short_name.getString()),
-  SCORPIUS(scorpius.getString(), scorpius_desc.getString(), scorpius_short_name.getString()),
-  TAURUS(taurus.getString(), taurus_desc.getString(), taurus_short_name.getString()),
-  URSA_MAJOR(ursa_major.getString(), ursa_major_desc.getString(), ursa_major_short_name.getString()),
-  VIRGO(virgo.getString(), virgo_desc.getString(), virgo.getString());
+enum class Constellation(longNameRes: Int, desc: Int, shortNameRes: Int, val image: Int) {
+  AQUARIUS(aquarius, aquarius_desc, aquarius, aquarius_img),
+  AQUILA(aquila, aquila_desc, aquila_short_name, aquila_img),
+  ARIES(aries, aries_desc, aries_short_name, aries_img),
+  AURIGA(auriga, auriga_desc, auriga_short_name, auriga_img),
+  BOOTES(bootes, bootes_desc, bootes_short_name, bootes_img),
+  CANCER(cancer, cancer_desc, cancer_short_name, cancer_img),
+  CANIS_MAJOR(canis_major, canis_major_desc, canis_major_short_name, canis_major_img),
+  CAPRICORNUS(capricornus, capricornus_desc, capricornus_short_name, capricornus_img),
+  CASSIOPEIA(cassiopeia, cassiopeia_desc, cassiopeia_short_name, cassiopeia_img),
+  CYGNUS(cygnus, cygnus_desc, cygnus_short_name, cygnus_lyra_img),
+  GEMINI(gemini, gemini_desc, gemini_short_name, gemini_img),
+  LEO(leo, leo_desc, leo_short_name, leo_img),
+  LIBRA(libra, libra_desc, libra_short_name, libra_img),
+  LYRA(lyra, lyra_desc, lyra_short_name, cygnus_lyra_img),
+  ORION(orion, orion_desc, orion_short_name, orion_img),
+  PEGASUS(pegasus, pegasus_desc, pegasus_short_name, pegasus_img),
+  PERSEUS(perseus, perseus_desc, perseus_short_name, perseus_img),
+  PISCES(pisces, pisces_desc, pisces_short_name, pisces_img),
+  SAGITTARIUS(sagittarius, sagittarius_desc, sagittarius_short_name, sagittarius_img),
+  SCORPIUS(scorpius, scorpius_desc, scorpius_short_name, scorpius_img),
+  TAURUS(taurus, taurus_desc, taurus_short_name, taurus_img),
+  URSA_MAJOR(ursa_major, ursa_major_desc, ursa_major_short_name, ursa_major_img),
+  VIRGO(virgo, virgo_desc, virgo, virgo_img);
 
-  val description = desc + R.string.content_attribution.getString()
+  val description = desc.getString() + R.string.content_attribution.getString()
+  val longName = longNameRes.getString()
+  val shortName = shortNameRes.getString()
 
   companion object {
     fun fromString(name: String) : Constellation {
@@ -105,4 +129,5 @@ enum class Constellation(val longName: String, desc: String, val shortName: Stri
     fun random() : Constellation = values()[Random().nextInt(values().size)]
 
   }
+
 }
