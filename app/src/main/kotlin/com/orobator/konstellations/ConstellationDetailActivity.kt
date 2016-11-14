@@ -21,6 +21,7 @@ import com.orobator.konstellations.R.string.shortcut_enabled
 class ConstellationDetailActivity : AppCompatActivity() {
   @BindView(R.id.constellation_description) lateinit var description: TextView
   @BindView(R.id.toolbar) lateinit var toolbar: Toolbar
+
   lateinit var constellation: Constellation
 
   companion object {
