@@ -29,8 +29,8 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:fitsSystemWindows="true"
-					app:layout_collapseMode="parallax"
-					android:src="@drawable/aquarius"/>
+					android:src="@drawable/aquarius"
+					app:layout_collapseMode="parallax"/>
 
 			<android.support.v7.widget.Toolbar
 					android:id="@+id/toolbar"
