@@ -33,7 +33,7 @@ class ShortcutTracker {
     }
 
     /**
-     * Sets the new Shortcut List by providing the four most visited
+     * Sets the new Shortcut List by providing the three most visited
      * constellations
      * */
     @TargetApi(N_MR1)
