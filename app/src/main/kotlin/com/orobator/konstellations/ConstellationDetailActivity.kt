@@ -4,7 +4,7 @@ import android.R.id.home
 import android.annotation.TargetApi
 import android.content.Context
 import android.content.Intent
-import android.os.Build
+import android.os.Build.VERSION_CODES.N_MR1
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
@@ -66,7 +66,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
     return true
   }
 
-  @TargetApi(Build.VERSION_CODES.N_MR1)
+  @TargetApi(N_MR1)
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     when (item.itemId) {
       enable_shortcut -> shortcutAction {
