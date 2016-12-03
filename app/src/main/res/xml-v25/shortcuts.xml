@@ -7,6 +7,8 @@
 			android:shortcutId="random_constellation"
 			android:shortcutLongLabel="@string/shortcut_long_label"
 			android:shortcutShortLabel="@string/shortcut_short_label">
+		<!-- Each one of these intents needs an android:action, even if you don't
+		     do anything with it. Otherwise you're in for a crash! -->
 		<intent
 				android:action="android.intent.action.VIEW"
 				android:targetClass="com.orobator.konstellations.MainActivity"
