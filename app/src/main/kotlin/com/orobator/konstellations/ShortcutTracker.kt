@@ -19,7 +19,10 @@ class ShortcutTracker {
 
       val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(APP_CONTEXT)
       val seenCount = sharedPrefs.getInt(constellation.name, 0)
-      sharedPrefs.edit().putInt(constellation.name, seenCount + 1).apply()
+      sharedPrefs
+          .edit()
+          .putInt(constellation.name, seenCount + 1)
+          .apply()
 
       updateShortcuts(shortcutManager)
     }
