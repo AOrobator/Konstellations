@@ -30,12 +30,14 @@ class ConstellationDetailActivity : AppCompatActivity() {
     val KEY_CONSTELLATION = "key_constellation"
 
     fun getIntent(context: Context, constellation: Constellation): Intent {
-      val intent = Intent(context, ConstellationDetailActivity::class.java)
-      intent.putExtra(KEY_CONSTELLATION, constellation.name)
-      intent.action = Intent.ACTION_VIEW
-      return intent
+      return Intent(context, ConstellationDetailActivity::class.java).apply {
+        putExtra(KEY_CONSTELLATION, constellation.name)
+        action = Intent.ACTION_VIEW
+      }
     }
   }
+
+  private fun Intent.getConstellation(): String = this.getStringExtra(KEY_CONSTELLATION)
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -45,11 +47,9 @@ class ConstellationDetailActivity : AppCompatActivity() {
     setSupportActionBar(toolbar)
     supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-    constellation = if (intent.action == "RANDOM") {
-      Constellation.random()
-    } else {
-      val constellationName = intent.getStringExtra(KEY_CONSTELLATION)
-      Constellation.fromString(constellationName)
+    constellation = when (intent.action) {
+      "RANDOM" -> Constellation.random()
+      else -> Constellation.fromString(intent.getConstellation())
     }
 
     shortcutAction {

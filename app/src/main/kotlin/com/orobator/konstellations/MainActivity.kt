@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
 
   companion object {
     fun getIntent(context: Context): Intent {
-      val intent = Intent(context, MainActivity::class.java)
-      intent.action = Intent.ACTION_VIEW
-      return intent
+      return Intent(context, MainActivity::class.java).apply {
+        action = Intent.ACTION_VIEW
+      }
     }
   }
 }

@@ -48,6 +48,7 @@ import com.orobator.konstellations.R.string.capricornus_short_name
 import com.orobator.konstellations.R.string.cassiopeia
 import com.orobator.konstellations.R.string.cassiopeia_desc
 import com.orobator.konstellations.R.string.cassiopeia_short_name
+import com.orobator.konstellations.R.string.content_attribution
 import com.orobator.konstellations.R.string.cygnus
 import com.orobator.konstellations.R.string.cygnus_desc
 import com.orobator.konstellations.R.string.cygnus_short_name
@@ -117,7 +118,7 @@ enum class Constellation(longNameRes: Int, desc: Int, shortNameRes: Int, val ima
   URSA_MAJOR(ursa_major, ursa_major_desc, ursa_major_short_name, ursa_major_img),
   VIRGO(virgo, virgo_desc, virgo, virgo_img);
 
-  val description = desc.getString() + R.string.content_attribution.getString()
+  val description = desc.getString() + content_attribution.getString()
   val longName = longNameRes.getString()
   val shortName = shortNameRes.getString()
 

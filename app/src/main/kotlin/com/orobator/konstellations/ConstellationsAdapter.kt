@@ -18,8 +18,8 @@ class ConstellationsAdapter()
     return ConstellationViewHolder(itemView)
   }
 
-  override fun onBindViewHolder(holder: ConstellationViewHolder?, position: Int) {
-    holder!!.bind(Constellation.values()[position])
+  override fun onBindViewHolder(holder: ConstellationViewHolder, position: Int) {
+    holder.bind(Constellation.values()[position])
   }
 
   override fun getItemCount(): Int = Constellation.values().size
