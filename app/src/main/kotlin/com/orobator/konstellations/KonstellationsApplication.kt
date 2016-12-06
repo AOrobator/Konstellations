@@ -15,8 +15,6 @@ class KonstellationsApplication : Application() {
     super.onCreate()
     APP_CONTEXT = this
 
-    shortcutAction {
-      ShortcutTracker.updateShortcuts(it)
-    }
+    shortcutAction(::updateShortcuts)
   }
 }
