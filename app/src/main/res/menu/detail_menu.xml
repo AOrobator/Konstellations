@@ -9,4 +9,8 @@
     android:id="@+id/disable_shortcut"
     android:title="@string/disable_shortcut"/>
 
+  <item
+    android:id="@+id/request_pin_shortcut"
+    android:title="@string/request_pin_shortcut"/>
+
 </menu>

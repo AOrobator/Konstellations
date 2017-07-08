@@ -82,4 +82,5 @@
   <string name="disable_shortcut">Disable Shortcut</string>
   <string name="shortcut_enabled">Shortcut Enabled</string>
   <string name="shortcut_disabled">Shortcut Disabled</string>
+  <string name="request_pin_shortcut">Request Pin Shortcut</string>
 </resources>

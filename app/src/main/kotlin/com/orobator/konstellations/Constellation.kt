@@ -1,5 +1,10 @@
 package com.orobator.konstellations
 
+import android.content.pm.ShortcutInfo
+import android.content.pm.ShortcutInfo.Builder
+import android.graphics.drawable.Icon
+import com.orobator.konstellations.KonstellationsApplication.Companion.APP_CONTEXT
+import com.orobator.konstellations.R.drawable
 import com.orobator.konstellations.R.drawable.aquarius_img
 import com.orobator.konstellations.R.drawable.aquila_img
 import com.orobator.konstellations.R.drawable.aries_img
@@ -92,7 +97,6 @@ import com.orobator.konstellations.R.string.virgo
 import com.orobator.konstellations.R.string.virgo_desc
 import java.util.Random
 
-
 enum class Constellation(longNameRes: Int, desc: Int, shortNameRes: Int, val image: Int) {
   AQUARIUS(aquarius, aquarius_desc, aquarius, aquarius_img),
   AQUILA(aquila, aquila_desc, aquila_short_name, aquila_img),
@@ -131,4 +135,21 @@ enum class Constellation(longNameRes: Int, desc: Int, shortNameRes: Int, val ima
 
   }
 
+  fun toShortcutInfo(): ShortcutInfo {
+    return Builder(APP_CONTEXT, name)
+        .setShortLabel(shortName)
+        .setLongLabel(longName)
+        .setIcon(
+            Icon.createWithResource(APP_CONTEXT, drawable.shortcut_icon))
+        .setIntents(
+            arrayOf(
+                // This intent is used for the back-stack
+                MainActivity.getIntent(APP_CONTEXT),
+                // This intent is what gets initially launched
+                ConstellationDetailActivity.getIntent(APP_CONTEXT, this)
+            )
+        )
+        .build()
+
+  }
 }

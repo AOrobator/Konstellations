@@ -4,7 +4,9 @@ import android.R.id.home
 import android.annotation.TargetApi
 import android.content.Context
 import android.content.Intent
+import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.N_MR1
+import android.os.Build.VERSION_CODES.O
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
@@ -53,7 +55,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
     }
 
     shortcutAction {
-      trackShortcutUsed(it, constellation)
+      trackShortcutUsed(this, constellation)
     }
 
     title = constellation.longName
@@ -70,12 +72,17 @@ class ConstellationDetailActivity : AppCompatActivity() {
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     when (item.itemId) {
       enable_shortcut -> shortcutAction {
-        it.enableShortcuts(listOf(constellation.name))
+        enableShortcuts(listOf(constellation.name))
         alertUser(shortcut_enabled)
       }
       disable_shortcut -> shortcutAction {
-        it.disableShortcuts(listOf(constellation.name))
+        disableShortcuts(listOf(constellation.name))
         alertUser(shortcut_disabled)
+      }
+      R.id.request_pin_shortcut -> shortcutAction {
+        if (SDK_INT >= O && isRequestPinShortcutSupported) {
+          requestPinShortcut(constellation.toShortcutInfo(), null)
+        }
       }
       home -> finish()
     }
