@@ -25,6 +25,12 @@
       android:parentActivityName=".MainActivity"
       android:theme="@style/DetailTheme">
     </activity>
+
+    <receiver
+      android:name=".ShortcutPinnedReceiver"
+      android:enabled="true"
+      android:exported="false">
+    </receiver>
   </application>
 
 </manifest>

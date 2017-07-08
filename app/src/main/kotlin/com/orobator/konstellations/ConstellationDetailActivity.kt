@@ -2,6 +2,7 @@ package com.orobator.konstellations
 
 import android.R.id.home
 import android.annotation.TargetApi
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build.VERSION.SDK_INT
@@ -81,7 +82,13 @@ class ConstellationDetailActivity : AppCompatActivity() {
       }
       R.id.request_pin_shortcut -> shortcutAction {
         if (SDK_INT >= O && isRequestPinShortcutSupported) {
-          requestPinShortcut(constellation.toShortcutInfo(), null)
+          val intent = Intent(this@ConstellationDetailActivity, ShortcutPinnedReceiver::class.java)
+          val pendingIntent = PendingIntent.getBroadcast(
+              this@ConstellationDetailActivity,
+              0,
+              intent,
+              0)
+          requestPinShortcut(constellation.toShortcutInfo(), pendingIntent.intentSender)
         }
       }
       home -> finish()
