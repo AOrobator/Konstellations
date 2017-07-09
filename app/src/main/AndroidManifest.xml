@@ -31,6 +31,13 @@
       android:enabled="true"
       android:exported="false">
     </receiver>
+
+    <activity android:name=".ShortcutCustomizationActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+      </intent-filter>
+    </activity>
+
   </application>
 
 </manifest>
