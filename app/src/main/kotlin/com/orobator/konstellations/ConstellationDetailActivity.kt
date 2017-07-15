@@ -80,11 +80,12 @@ class ConstellationDetailActivity : AppCompatActivity() {
       R.id.request_pin_shortcut -> shortcutAction {
         if (SDK_INT >= O && isRequestPinShortcutSupported) {
           val intent = Intent(this@ConstellationDetailActivity, ShortcutPinnedReceiver::class.java)
+          intent.putExtra(Intent.EXTRA_TITLE, constellation.shortName)
           val pendingIntent = PendingIntent.getBroadcast(
               this@ConstellationDetailActivity,
               0,
               intent,
-              0)
+              PendingIntent.FLAG_UPDATE_CURRENT)
           requestPinShortcut(constellation.toShortcutInfo(), pendingIntent.intentSender)
         }
       }

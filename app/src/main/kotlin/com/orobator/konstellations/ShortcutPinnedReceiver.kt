@@ -8,6 +8,7 @@ import android.widget.Toast
 class ShortcutPinnedReceiver : BroadcastReceiver() {
 
   override fun onReceive(context: Context, intent: Intent) {
-    Toast.makeText(context, "Shortcut Pinned!", Toast.LENGTH_SHORT).show()
+    val shortcutName = intent.getStringExtra(Intent.EXTRA_TITLE)
+    Toast.makeText(context, "$shortcutName Pinned!", Toast.LENGTH_SHORT).show()
   }
 }
