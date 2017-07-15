@@ -56,7 +56,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
     }
 
     shortcutAction {
-      trackShortcutUsed(this, constellation)
+      trackShortcutUsed(constellation)
     }
 
     title = constellation.longName

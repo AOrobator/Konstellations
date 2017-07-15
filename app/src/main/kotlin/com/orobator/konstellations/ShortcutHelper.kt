@@ -57,8 +57,8 @@ fun updateShortcuts(shortcutManager: ShortcutManager) {
 }
 
 @TargetApi(N_MR1)
-fun trackShortcutUsed(shortcutManager: ShortcutManager, constellation: Constellation) {
-  shortcutManager.reportShortcutUsed(constellation.name)
+fun ShortcutManager.trackShortcutUsed(constellation: Constellation) {
+  this.reportShortcutUsed(constellation.name)
 
   val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(APP_CONTEXT)
   val seenCount = sharedPrefs.getInt(constellation.name, 0)
@@ -67,5 +67,5 @@ fun trackShortcutUsed(shortcutManager: ShortcutManager, constellation: Constella
       .putInt(constellation.name, seenCount + 1)
       .apply()
 
-  updateShortcuts(shortcutManager)
+  updateShortcuts(this)
 }
