@@ -1,6 +1,5 @@
 package com.orobator.konstellations
 
-import android.R.id.home
 import android.annotation.TargetApi
 import android.app.PendingIntent
 import android.content.Context
@@ -17,8 +16,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
-import com.orobator.konstellations.R.id.disable_shortcut
-import com.orobator.konstellations.R.id.enable_shortcut
 import com.orobator.konstellations.R.string.shortcut_disabled
 import com.orobator.konstellations.R.string.shortcut_enabled
 
@@ -72,11 +69,11 @@ class ConstellationDetailActivity : AppCompatActivity() {
   @TargetApi(N_MR1)
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
     when (item.itemId) {
-      enable_shortcut -> shortcutAction {
+      R.id.enable_shortcut -> shortcutAction {
         enableShortcuts(listOf(constellation.name))
         alertUser(shortcut_enabled)
       }
-      disable_shortcut -> shortcutAction {
+      R.id.disable_shortcut -> shortcutAction {
         disableShortcuts(listOf(constellation.name))
         alertUser(shortcut_disabled)
       }
@@ -91,7 +88,7 @@ class ConstellationDetailActivity : AppCompatActivity() {
           requestPinShortcut(constellation.toShortcutInfo(), pendingIntent.intentSender)
         }
       }
-      home -> finish()
+      android.R.id.home -> finish()
     }
     return true
   }
