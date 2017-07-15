@@ -14,7 +14,7 @@ import com.orobator.konstellations.KonstellationsApplication.Companion.APP_CONTE
 inline fun shortcutAction(action: ShortcutManager.() -> Unit): Unit {
   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
     val shortcutManager = APP_CONTEXT.getSystemService(ShortcutManager::class.java)
-    action(shortcutManager)
+    shortcutManager.action()
   }
 }
 
