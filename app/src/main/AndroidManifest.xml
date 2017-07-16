@@ -16,9 +16,6 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
 
-      <meta-data
-        android:name="android.app.shortcuts"
-        android:resource="@xml/shortcuts"/>
     </activity>
     <activity
       android:name=".ConstellationDetailActivity"
@@ -26,11 +23,6 @@
       android:theme="@style/DetailTheme">
     </activity>
 
-    <receiver
-      android:name=".ShortcutPinnedReceiver"
-      android:enabled="true"
-      android:exported="false">
-    </receiver>
   </application>
 
 </manifest>
