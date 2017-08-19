@@ -1,0 +1,73 @@
+{
+  "constellations": [
+    {
+      "name": "Aquarius"
+    },
+    {
+      "name": "Aquila, the Eagle"
+    },
+    {
+      "name": "Aries, the Ram"
+    },
+    {
+      "name": "Auriga, the Charioteer"
+    },
+    {
+      "name": "Boötes, the Herdsman"
+    },
+    {
+      "name": "Cancer, the Crab"
+    },
+    {
+      "name": "Canis Major, the Great Dog"
+    },
+    {
+      "name": "Capricornus, the Sea-Goat"
+    },
+    {
+      "name": "Cassiopeia, the Queen"
+    },
+    {
+      "name": "Cygnus, the Swan"
+    },
+    {
+      "name": "Gemini, the Twins"
+    },
+    {
+      "name": "Leo, the Lion"
+    },
+    {
+      "name": "Libra, the Scales"
+    },
+    {
+      "name": "Lyra, the Harp"
+    },
+    {
+      "name": "Orion, the Hunter"
+    },
+    {
+      "name": "Pegasus, the Flying Horse"
+    },
+    {
+      "name": "Perseus, the Hero"
+    },
+    {
+      "name": "Pisces, the Fish"
+    },
+    {
+      "name": "Sagittarius, the Archer"
+    },
+    {
+      "name": "Scorpius, the Scorpion"
+    },
+    {
+      "name": "Taurus, the Bull"
+    },
+    {
+      "name": "Ursa Major, the Great Bear"
+    },
+    {
+      "name": "Virgo"
+    }
+  ]
+}
